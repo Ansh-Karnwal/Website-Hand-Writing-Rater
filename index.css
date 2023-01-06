@@ -1,0 +1,76 @@
+body {
+    font-family: Roboto, Arial;
+    color: white;
+    background-image: url("/assets/backkground.png");
+
+}
+
+#header {
+    display: flex;
+    justify-content: center;
+    font-size: 80px;
+    margin-bottom: 0px;
+}
+
+#header2 {
+    display: flex;
+    justify-content: center;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+}
+
+.clear-btnC {
+    width: 200px;
+    padding: 20px 20px 20px 20px;
+    margin-right: 10px;
+    background-color: #9101d5;
+    border: none;
+    border-radius: 5px;
+    transition: opacity 0.15s;
+}
+
+.clear-btnC:hover {
+    opacity: 0.8;
+}
+
+.clear-btnC:active {
+    opacity: 0.5;
+}
+
+.evaluate-btnC {
+    width: 400px;
+    background-color: #9101d5;
+    border: none;
+    border-radius: 5px;
+    transition: opacity 0.15s;
+}
+
+.evaluate-btnC:hover {
+    opacity: 0.8;
+}
+
+.evaluate-btnC:active {
+    opacity: 0.5;
+}
+
+.open-img-btnC {
+    width: 200px;
+    padding: 20px 20px 20px 20px;
+    margin-right: 10px;
+    background-color: #9101d5;
+    border: none;
+    border-radius: 5px;
+    transition: opacity 0.15s;
+}
+
+.open-img-btnC:hover {
+    opacity: 0.8;
+}
+
+.open-img-btnC:active {
+    opacity: 0.5;
+}
+

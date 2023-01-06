@@ -1,0 +1,23 @@
+<html lang="en">
+    <head>
+        <title>HandWriting Rater</title>
+
+        <link rel="stylesheet" href="index.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <h1 id="header">Hand Writing Rater</h1>
+        <h2 id="header2">Use Artificial Intelligence To Rate Your Handwriting</h2>
+        <div class="buttons-container">
+<!--            <button id="clear-btn" class="clear-btnC">CLEAR</button>-->
+<!--            <button id="evaluate-btn" class="evaluate-btnC">EVALUATE</button>-->
+            <input type='file' accept='image/*' onchange='openFile(event)'>
+            <button id="open-img-btn" class="open-img-btnC">OPEN IMAGE</button>
+        </div>
+        <script src='https://unpkg.com/tesseract.js@4.0.1/dist/tesseract.min.js'></script>
+        <script src="index.js"></script>
+    </body>
+</html>
