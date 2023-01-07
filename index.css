@@ -1,8 +1,11 @@
 body {
     font-family: Roboto, Arial;
-    color: white;
+    color: #638db5;
     background-image: url("/assets/backkground.png");
 
+}
+
+div {
 }
 
 #header {
@@ -17,16 +20,30 @@ body {
     justify-content: center;
 }
 
+#canvas {
+    width: 400px;
+    height: 400px;
+    background-color: #ffffff;
+    border: 2px solid #638db5;
+    cursor: crosshair;
+}
+
+.writing-division {
+    margin-top: 30px;
+    margin-left: 60px;
+    display: inline-flex;
+    flex-direction: column;
+}
+
 .buttons-container {
     display: flex;
-    justify-content: center;
 }
 
 .clear-btnC {
-    width: 200px;
-    padding: 20px 20px 20px 20px;
-    margin-right: 10px;
-    background-color: #9101d5;
+    width: 80px;
+    padding: 10px 10px 10px 10px;
+    margin-right: 1px;
+    background-color: #62a9cc;
     border: none;
     border-radius: 5px;
     transition: opacity 0.15s;
@@ -41,8 +58,8 @@ body {
 }
 
 .evaluate-btnC {
-    width: 400px;
-    background-color: #9101d5;
+    flex: 1;
+    background-color: #62a9cc;
     border: none;
     border-radius: 5px;
     transition: opacity 0.15s;
@@ -60,7 +77,7 @@ body {
     width: 200px;
     padding: 20px 20px 20px 20px;
     margin-right: 10px;
-    background-color: #9101d5;
+    background-color: #6792bd;
     border: none;
     border-radius: 5px;
     transition: opacity 0.15s;
@@ -73,4 +90,3 @@ body {
 .open-img-btnC:active {
     opacity: 0.5;
 }
-

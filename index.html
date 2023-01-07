@@ -11,13 +11,25 @@
     <body>
         <h1 id="header">Hand Writing Rater</h1>
         <h2 id="header2">Use Artificial Intelligence To Rate Your Handwriting</h2>
-        <div class="buttons-container">
-<!--            <button id="clear-btn" class="clear-btnC">CLEAR</button>-->
-<!--            <button id="evaluate-btn" class="evaluate-btnC">EVALUATE</button>-->
-            <input type='file' accept='image/*' onchange='openFile(event)'>
-            <button id="open-img-btn" class="open-img-btnC">OPEN IMAGE</button>
+<!--        <div class="buttons-container">-->
+<!--&lt;!&ndash;            <button id="clear-btn" class="clear-btnC">CLEAR</button>&ndash;&gt;-->
+<!--&lt;!&ndash;            <button id="evaluate-btn" class="evaluate-btnC">EVALUATE</button>&ndash;&gt;-->
+<!--            <input type='file' accept='image/*' onchange='openFile(event)'>-->
+<!--            <button id="open-img-btn" class="open-img-btnC">OPEN IMAGE</button>-->
+<!--        </div>-->
+        <div class="writing-division">
+            <p style="">Please write "Feast" below and click Evaluate</p>
+            <canvas id="canvas" width="400" height="400"></canvas>
+            <div class="buttons-container">
+                <button class="clear-btnC" onclick="canvas.erase()">Clear</button>
+                <button class="clear-btnC" onclick="canvas.undo()">Undo</button>
+                <button class="clear-btnC"onclick="canvas.redo()">Redo</button>
+                <button class="evaluate-btnC" onclick="
+            canvas.setOptions({language : 'en', numOfReturn : 9});
+            canvas.recognize();">Evaluate</button>
+            </div>
         </div>
-        <script src='https://unpkg.com/tesseract.js@4.0.1/dist/tesseract.min.js'></script>
+        <script src="imported-google-ime-access-js/handwriting.canvas.js"></script>
         <script src="index.js"></script>
     </body>
 </html>
