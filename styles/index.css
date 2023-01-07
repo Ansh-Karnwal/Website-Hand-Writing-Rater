@@ -51,6 +51,7 @@ div {
 
 .clear-btnC:hover {
     opacity: 0.8;
+    cursor: pointer;
 }
 
 .clear-btnC:active {
@@ -67,6 +68,7 @@ div {
 
 .evaluate-btnC:hover {
     opacity: 0.8;
+    cursor: pointer;
 }
 
 .evaluate-btnC:active {
@@ -90,3 +92,5 @@ div {
 .open-img-btnC:active {
     opacity: 0.5;
 }
+
+
