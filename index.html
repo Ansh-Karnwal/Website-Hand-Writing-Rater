@@ -3,7 +3,6 @@
         <title>HandWriting Rater</title>
 
         <link rel="stylesheet" href="index.css">
-        <link rel="stylesheet" href="styles/importedspeedometer.css">
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,11 +31,16 @@
                 </div>
             </div>
             <div class="progress"></div>
-            <p id="tips">tips</p>
+            <p id="tips"></p>
         </div>
         <div class="progress"></div>
+        <div class="page-content1">
+            <p id="image-open-label">Try opening an image and see what the AI thinks it is (BETA)</p>
+            <input type='file' accept='image/*' onchange='openFile(event)'>
+            <p id="output-ocr"></p>
+        </div>
         <script src="imported-google-ime-access-js/handwriting.canvas.js"></script>
         <script src="index.js"></script>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tesseract.js/4.0.2/tesseract.min.js"></script>
     </body>
 </html>

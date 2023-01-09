@@ -1,8 +1,9 @@
 body {
     font-family: Roboto, Arial;
     color: #638db5;
+    background-color: black;
     background-image: url("/assets/backkground.png");
-
+    padding-bottom: 100px;
 }
 
 div {
@@ -94,15 +95,33 @@ div {
 }
 
 .page-content {
-    display: inline-flex;
+    display: flex;
     align-items: center;
 }
 
 #tips {
     white-space: pre-wrap;
     margin-top: 80px;
+    margin-left: 230px;
 }
 
+.page-content1 {
+    margin-left: 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+#image-open-label {
+}
+
+#image-open-label {
+}
+
+#output-ocr {
+}
+
+
+/*import start*/
 :root {
     --tlt-br-cnt: 50;
     --i: 0;
@@ -205,5 +224,4 @@ div {
     from {opacity: 0}
     to {opacity: 1}
 }
-
-
+/*import end*/

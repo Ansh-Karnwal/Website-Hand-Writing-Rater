@@ -1,25 +1,6 @@
-// var openFile = function(file) {
-//     var input = file.target;
-//     var reader = new FileReader();
-//     reader.onload = function(){
-//         var dataURL = reader.result;
-//         var output = document.getElementById('output');
-//         output.src = dataURL;
-//     };
-//     reader.readAsDataURL(input.files[0]);
-// };
-
-// Tesseract.recognize(
-//     'https://tesseract.projectnaptha.com/img/eng_bw.png',
-//     'eng',
-// ).then(({ data: { text } }) => {
-//     console.log(text);
-// })
-
 const canvas = new handwriting.Canvas(document.getElementById("canvas"), 10);
 canvas.set_Undo_Redo(true, true);
 canvas.setLineWidth(5);
-var cut = 0;
 canvas.setCallBack(function(data, err) {
     if (err) throw err;
     const wordCharacterList = ['F', 'e', 'a', 's', 't'];
@@ -53,8 +34,6 @@ canvas.setCallBack(function(data, err) {
     else if (score <= 90) {selected = 'selected1'; textColor = 'text1';}
     const barCount = 50;
     const wrapper = document.querySelectorAll('.progress');
-    console.log(score);
-    console.log(wrapper);
     const percent = Math.round(50 * Math.round(score)/100);
     for (let index = 0; index < barCount; index++) {
         wrapper[0].innerHTML -= ``;
@@ -70,23 +49,22 @@ canvas.setCallBack(function(data, err) {
     else {
         wrapper[0].innerHTML += `<p class="selected percent-text ${textColor}">${Math.round(score)}%</p>`;
     }
-
     const tips = document.getElementById('tips');
-    if (selected.localeCompare('selected3')) {
+    if (selected.localeCompare('selected3') == 0) {
         tips.textContent = "To improve your handwriting follow the tips below\n" +
             "1. Write slower in order to get better quality in the writing\n" +
             "2. Have a relaxed grip when writing\n" +
             "3. Practice writing on paper. It is important to find a writing utensil that can give the best output when writing\n" +
             "4. For more tips visit https://tinyurl.com/3hae3mya";
     }
-    else if (selected.localeCompare('selected2')) {
+    else if (selected.localeCompare('selected2') == 0) {
         tips.textContent = "To improve your handwriting follow the tips below\n" +
             "\n1. Try writing letters closer to improve quality\n" +
             "2. Find the best way to hold the writing utensil\n" +
             "3. Avoid excess lines or dots and keep a consistent and proper letter shape\n" +
             "4. For more tips visit https://tinyurl.com/3hae3mya";
     }
-    else if (selected.localeCompare('selected1')) {
+    else if (selected.localeCompare('selected1') == 0) {
         tips.textContent = "Congratulations, your handwriting is excellent here are some fun things you can do\n" +
             "1. Try to learn cursive (If not known)\n" +
             "2. Experiment with new writing styles\n" +
@@ -96,4 +74,17 @@ canvas.setCallBack(function(data, err) {
 });
 canvas.set_Undo_Redo(true, true);
 
-
+const openFile = function (file) {
+    const input = file.target;
+    const reader = new FileReader();
+    const outputOCR = document.getElementById("output-ocr");
+    reader.onload = function () {
+        const dataURL = reader.result;
+        Tesseract.recognize(
+            dataURL,
+        ).then(({ data: { text } }) => {
+            outputOCR.textContent = text;
+        })
+    };
+    reader.readAsDataURL(input.files[0]);
+};
